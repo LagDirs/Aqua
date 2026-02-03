@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор аквариумного оборудования</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6;">
+    <!-- Баннер -->
+    <header style="padding: 40px 20px; text-align: center;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;"> Подбор аквариумного оборудования</h1>
+    </header>
+
+    <!-- Основной контент -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px;">
+        <div style="background: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #ddd;">
+            <h2 style="font-size: 1.6rem; margin-bottom: 25px; text-align: center; margin-top: 0;">Укажите параметры вашего аквариума</h2>
+            
+            <form id="aquarium-form">
+                <!-- Раздел: Основные параметры -->
+                <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px; font-weight: bold; margin-top: 0;"> Основные параметры</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="aquarium-type" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Тип аквариума
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Выберите основной тип вашего аквариума">?</span>
+                            </label>
+                            <select id="aquarium-type" name="type" required style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                                <option value="">-- Выберите тип --</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="aquarium-subtype" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Подтип
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Выберите специализированный подтип аквариума">?</span>
+                            </label>
+                            <select id="aquarium-subtype" name="subtype" required style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                                <option value="">-- Выберите подтип --</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="aquarium-volume" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Объём (л.)
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Укажите общий объём аквариума в литрах">?</span>
+                            </label>
+                            <select id="aquarium-volume" name="volume" required style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                                <option value="">-- Выберите объём --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Раздел: Рыбы -->
+                <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px; font-weight: bold; margin-top: 0;"> Рыбы</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="fish-small" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Маленькие (шт.)
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Количество небольших рыб (размер до 5см)">?</span>
+                            </label>
+                            <input type="number" id="fish-small" name="fish_small" min="0" value="0" style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="fish-medium" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Средние (шт.)
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Количество средних рыб (размер 5-15см)">?</span>
+                            </label>
+                            <input type="number" id="fish-medium" name="fish_medium" min="0" value="0" style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="fish-large" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Большие (шт.)
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Количество крупных рыб (размер более 15см)">?</span>
+                            </label>
+                            <input type="number" id="fish-large" name="fish_large" min="0" value="0" style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Раздел: Растения -->
+                <div style="margin-bottom: 30px; padding-bottom: 0;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px; font-weight: bold; margin-top: 0;"> Растения</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="plant-density" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Плотность растений
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Выберите желаемую плотность растительности в аквариуме">?</span>
+                            </label>
+                            <select id="plant-density" name="plant_density" required style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                                <option value="">-- Выберите плотность --</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="plant-complexity" style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">
+                                Сложность растений
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; margin-left: 5px;" title="Выберите уровень сложности ухода за растениями">?</span>
+                            </label>
+                            <select id="plant-complexity" name="plant_complexity" required style="padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                                <option value="">-- Выберите сложность --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка отправки -->
+                <div style="display: flex; justify-content: center; margin-top: 30px;">
+                    <button type="submit" style="padding: 12px 40px; border: 1px solid #333; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; background: white;"> Подобрать оборудование</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Результаты -->
+        <div id="results-section" style="background: white; padding: 30px; border-radius: 8px; border: 1px solid #ddd; display: none;">
+            <h2 style="font-size: 1.6rem; margin-bottom: 25px; text-align: center; margin-top: 0;">Рекомендуемое оборудование</h2>
+            <div id="results-container"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
